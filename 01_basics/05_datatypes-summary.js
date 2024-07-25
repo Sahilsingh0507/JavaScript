@@ -56,5 +56,21 @@ const myFunction = function () {
 // Stack (Primitive), Heap(Non-Primitive)
 
 let myYoutubeName = "hiteshchoudharydotcom";
-let anotherName = myYoutubeName;
+// let anotherName = myYoutubeName;
+let anotherName = "ChaiaurCode";
+console.log(myYoutubeName);
 console.log(anotherName);
+
+
+// in heap we give the memory location not the copy of the data so if we change data in other it will change the original value 
+let userOne = {
+    email: "user@google.com",
+    upi: "user@ybl",
+}
+
+let userTwo = userOne;
+
+userTwo.email = "sahil@google.com";
+
+console.log(userOne.email);
+console.log(userTwo.email);
