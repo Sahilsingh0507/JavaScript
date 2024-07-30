@@ -9,7 +9,7 @@
 // }
 
 
-// if we dont use break in switch case it executes all the values present below it except default case 
+// if we dont use break in switch case it executes all the values present below it including default case  
 const month = 3;
 switch (month) {
     case 1:
