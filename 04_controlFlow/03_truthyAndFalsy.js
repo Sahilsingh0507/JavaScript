@@ -50,5 +50,7 @@ console.log(val1);
 
 // often we get confused between these two 
 // ternary operator 
+
+condition ? true : false;
 const iceTeaPrice = 100;
 iceTeaPrice <= 80 ? console.log("less than 80") : console.log("greater than 80");
