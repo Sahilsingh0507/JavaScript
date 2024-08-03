@@ -29,6 +29,8 @@ const programming = ["cpp", "js", "py", "rb", "java"];
 // }
 
 // printing values in array 
-for (const key in programming) {
-    console.log(programming[key]);
-}
+// for (const key in programming) {
+//     console.log(programming[key]);
+// }
+
+

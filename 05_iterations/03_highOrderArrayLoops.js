@@ -46,5 +46,9 @@ const myObj = {
 //     console.log(key, ':-', value);
 // }
 
-
+// using forin loop for map 
+// map is not iteratable son we cannot use for in loop in map 
+for (const key in map) {
+    console.log(key);
+}
 
