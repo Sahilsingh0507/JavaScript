@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events</title>
+</head>
+
+<body style="background-color: #414141; color: #fff;">
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="photoshop"
+                    src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt="photoshop"></li>
+            <li><img width="200px" id="japan"
+                    src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt="photoshop"></li>
+            <li><img width="200px" id="river"
+                    src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt="photoshop"></li>
+            <li><img width="200px" id="owl"
+                    src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><img width="200px" id="prayer"
+                    src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><a style="color: #fff;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+
+
+    <script src="">
+        // iske andar koi problem nhi hai lekin event listeners k andar jada features milte hai 
+        // document.getElementById('owl').onClick = function () {
+        //     alert("owl clicked");
+        // }
+
+        // isme third parameter by default false hi hota lekin hota hai isme interview me puch sakte hai
+        // document.getElementById('owl').addEventListener('click', function (event) {
+        //     alert("owl clicked again ");
+        // }, false)
+
+        //attachEvent() internet explorer
+        //jQuery - on event listener
+
+        // document.getElementById('owl').addEventListener('click', function (event) {
+        //     console.log(event);
+        // }, false)
+
+        //type,timestamp,defaultPrevented,
+        //target, toElement, srcElement, currentTarget,
+        // clientX, ClientY, screenX, screenY
+        //altkey, ctrlkey, shiftkey, keyCode
+
+        // event propogation
+        // inside to outside just like bubbling
+
+        // document.getElementById('images').addEventListener('click', function (event) {
+        //     console.log("click inside the ul");
+        // }, false)
+        // document.getElementById('owl').addEventListener('click', function (event) {
+        //     console.log("owl clicked");
+        // }, false)
+
+        // capturing
+        // top to bottom flow
+        // document.getElementById('images').addEventListener('click', function (event) {
+        //     console.log("click inside the ul");
+        // }, true)
+        // document.getElementById('owl').addEventListener('click', function (event) {
+        //     console.log("owl clicked");
+        // }, true)
+
+        // stop propogation it will not go from inside to outside
+        // document.getElementById('images').addEventListener('click', function (event) {
+        //     console.log("click inside the ul");
+        // }, false)
+        // document.getElementById('owl').addEventListener('click', function (event) {
+        //     console.log("owl clicked");
+        //     // stops next propogation
+        //     event.stopPropagation();
+        // }, false)
+
+        // if you want to change the default behaviour
+        // document.getElementById('google').addEventListener('click', function (event) {
+        //     event.preventDefault();
+        //     event.stopPropagation();
+        //     console.log("google clicked");
+        // }, false)
+
+        // document.querySelector('#images').addEventListener('click', function (event) {
+        //     // console.log(event);
+        //     // it targets the image we are clicking 
+        //     // console.log(event.target);
+        //     // hame pura li remove krna naki bss img toh uske liye parent ko access krna padega 
+        //     console.log(event.target.parentNode);
+        //     let removeIt = event.target.parentNode;
+        //     // removeIt.remove();
+        //     // another way of removing or deleting 
+        //     removeIt.parentNode.removeChild(removeIt);
+        // })
+
+        document.querySelector('#images').addEventListener('click', function (event) {
+            console.log(event.target.tagName);
+            // we have written this function instead of previous one because if we are clickin on list the parent node ul is getting selected and all the list present inside parent node is getting deleted
+            if (event.target.tagName === 'IMG') {
+                console.log(event.target.id)
+                let removeIt = event.target.parentNode;
+                removeIt.remove();
+            }
+
+        })
+    </script>
+</body>
+
+</html>
