@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout and setInterval</title>
+</head>
+
+<body>
+    <h1>Chai aur Code</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+    <script>
+        // setInterval(function () {
+        //     console.log("sahil", Date.now());
+        // }, 1000)
+
+        // pass by reference 
+        const sayDate = function (str) {
+            console.log(str, Date.now());
+        }
+
+        // setInterval(sayDate, 1000, "hi");
+
+        // clear interval 
+
+        // const intervalId = setInterval(sayDate, 1000, "hi");
+        // this will stop the function and it will not get executed even one time 
+        // clearInterval(intervalId);
+
+        document.querySelector('#start').addEventListener('click', function () {
+            setInterval(sayDate, 1000, "Sahil");
+            console.log("started");
+        })
+
+        // const intervalId = (sayDate, 1000, "hi");
+
+        // document.querySelector('#stop').addEventListener('click', function () {
+        //     clearInterval(sayDate, 1000, "sahil");
+        //     console.log("stopped");
+        // })
+
+    </script>
+</body>
+
+</html>

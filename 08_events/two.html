@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout and clearTimeout</title>
+</head>
+
+<body>
+    <h1>Chai aur Code</h1>
+    <button id="stop">Stop</button>
+
+    <script>
+        // ek baar hi kaam krega baar baar nahi karega jitna time diya h uske baad ek baar bs kaam krega 
+        // setTimeout(function () {
+        //     console.log("sahil");
+        // }, 2000)
+
+        // you can also give reference of the function and pass 
+        const saySahil = function () {
+            console.log("Sahil");
+        }
+
+        setTimeout(saySahil, 2000);
+
+        // document.querySelector('h1').innerHTML = "Best JS series";
+        const changeText = function () {
+            document.querySelector('h1').innerHTML = "Best JS series";
+        }
+
+        // setTimeout(changeText, 2000);
+        const changeMe = setTimeout(changeText, 2000);
+
+        //agar ham set timeout ko rokna chahte h toh clear timeout use krna hoga aur usko reference dena hoga kis set timeout ko clear krna chahte h 
+        // clearTimeout(changeMe);
+        document.querySelector('#stop').addEventListener('click', function () {
+            clearTimeout(changeMe);
+            console.log("stopped");
+        })
+    </script>
+</body>
+
+</html>
