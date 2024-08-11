@@ -30,17 +30,23 @@
         // this will stop the function and it will not get executed even one time 
         // clearInterval(intervalId);
 
+        let intervalId;
         document.querySelector('#start').addEventListener('click', function () {
-            setInterval(sayDate, 1000, "Sahil");
+            // intervalId = setInterval(sayDate, 1000, "Sahil");
+            // for optimize code we need to write a condition over here 
+            if (!intervalId) {
+                intervalId = setInterval(sayDate, 1000, "Sahil");
+            }
             console.log("started");
         })
 
-        // const intervalId = (sayDate, 1000, "hi");
 
-        // document.querySelector('#stop').addEventListener('click', function () {
-        //     clearInterval(sayDate, 1000, "sahil");
-        //     console.log("stopped");
-        // })
+        document.querySelector('#stop').addEventListener('click', function () {
+            clearInterval(intervalId);
+            // for optimize code fluch out the values of intervalId 
+            intervalId = null;
+            console.log("stopped");
+        })
 
     </script>
 </body>
